@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">>
+    <meta charset="UTF-8">
+    <title>onbuz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="full-page">
+        <div class="navbar">
+            <div>
+                <img src="LOgo.png" width=60 height=50 alt="photograph of us">
+                <img src="OnBuz.png" width=60 height=20 alt="photograph of us">
+                <!-- <a href="onbuz.html">onbuz</a> -->
+            </div>
+            <nav>
+                <ul id='Menuitems'>
+                    <li><a href="onbuz.html">Home</a></li>
+                    <li><a href="aboutus.html">About us</a></li>
+                    <li><a href='services.html'>Services</a></li>
+                    <li><a href='contact.html'>Contact</a></li>
+                    <li><button class='loginbtn'
+                    onclick="document.getElementById('login-form').style.display='block'"
+                style="width:auto;">Registration</button></li>
+                </ul>
+            </nav>
+        </div>
+        <div id='login-form'class='login-page'>
+            <div class="form-box">
+                <div class='button-box'>
+                    <div id='btn'></div>
+                    <button type='button'onclick='login()'class='toggle-btn'>Driver</button>
+                    <button type='button'onclick='register()'class='toggle-btn'>Student</button>
+                </div>
+                 <!-- Driver -->
+                <form id='login' class='input-group-login' method="post" action="ConfigDriver.php">
+                    <!-- <input type='number'class='input-field'placeholder='Driver number' required > -->
+                    <input type='text' name='name' class='input-field'placeholder='First Name' onfocus="this.placeholder =''" onblur="this.placeholder='First Name'" required>
+                    <input type='text'class='input-field'placeholder='Last Name ' onfocus="this.placeholder =''" onblur="this.placeholder='Last Name'">
+                    <input type='number'name ='Lnumber' class='input-field'placeholder='License number' onfocus="this.placeholder =''" onblur="this.placeholder='License number'" required>
+                    <input type='email' name='email' class='input-field'placeholder='Email Id' onfocus="this.placeholder =''" onblur="this.placeholder='Email Id'" required>
+		            <input type='password'name = 'password' class='input-field'placeholder='Enter Password' onfocus="this.placeholder =''" onblur="this.placeholder='Enter Password'" required>
+                    <input type='password' name = 'cpassword' class='input-field'placeholder='Confirm Password' onfocus="this.placeholder =''" onblur="this.placeholder='Confirm Password'" required>
+		            <input type='checkbox'class='check-box'><span>Verified all the details</span>
+		            <button type='submit'class='submit-btn'>Register</button>
+		 </form>
+                <!-- student -->
+		 <form id='register' class='input-group-register' method="post" action="ConfigStudent.php">
+		     
+		     <input type='text' name ='Sname' class='input-field'placeholder='First Name' onfocus="this.placeholder =''" onblur="this.placeholder='First Name'"required>
+             <input type='text'class='input-field'placeholder='Last Name' onfocus="this.placeholder =''" onblur="this.placeholder='Last Name'">
+		     <input type='email' name='email' class='input-field'placeholder='Email Id' onfocus="this.placeholder =''" onblur="this.placeholder='Email Id'"required>
+		     <input type='password' name ='spassword' class='input-field'placeholder='Enter Password' onfocus="this.placeholder =''" onblur="this.placeholder='Enter Password'"required>
+		     <input type='password' name ='cspassword'class='input-field'placeholder='Confirm Password' onfocus="this.placeholder =''" onblur="this.placeholder='Confirm Password'"required>
+		     <input type='checkbox'class='check-box'><span>Verified all the details</span>
+                    <button type='submit'class='submit-btn'>Register</button>
+	         </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var x=document.getElementById('login');
+		var y=document.getElementById('register');
+		var z=document.getElementById('btn');
+		function register()
+		{
+			x.style.left='-400px';
+			y.style.left='50px';
+			z.style.left='110px';
+		}
+		function login()
+		{
+			x.style.left='50px';
+			y.style.left='450px';
+			z.style.left='0px';
+		}
+	</script>
+	<script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) 
+        {
+            if (event.target == modal) 
+            {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+        </div>
+    </div>
+</body>
+</html>
